@@ -1,0 +1,8 @@
+baseURL = 'https://lpe234.xyz/'
+
+languageCode = 'zh-CN'
+timeZone = 'Asia/Shanghai'
+
+title = 'My New Hugo Site'
+
+theme = 'anatole'
