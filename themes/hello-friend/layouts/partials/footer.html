@@ -5,7 +5,7 @@
 
 {{$totalWord := $scratch.Get "total" }}
 
-{{ $wowWord := div $totalWord 10000}}
+{{ $wowWord := div (int $totalWord) 10000}}
 {{ $wowBook := "还在努力更新中..</br>加油！加油啦！"}}
 {{ if ge $wowWord 40 }}{{$wowBook = "写完一本我国著名的</br>四大名著了！"}}
 {{ else if ge $wowWord 35 }}{{$wowBook = "写完一本 东野圭吾 的</br>《白夜行》了！"}}

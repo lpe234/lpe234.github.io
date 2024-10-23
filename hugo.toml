@@ -3,6 +3,62 @@ baseURL = 'https://lpe234.xyz/'
 languageCode = 'zh-CN'
 timeZone = 'Asia/Shanghai'
 
-title = 'My New Hugo Site'
+title = 'Lp+Yj->LY'
 
+#
 theme = 'hello-friend'
+summaryLength = 200
+#
+pagination.pagerSize = 10
+rssLimit = 5
+
+[permalinks]
+posts = "/posts/:filename/"
+tags = "/tags/:slug/"
+
+[params]
+# "light" or "dark"
+defaultTheme = "light"
+showReadingTime = true
+
+MenuMore = "更多"
+DateFormatList = "2006-01-02"
+DateFormatSingle = "2006-01-02"
+ReadMore = "阅读全文"
+
+description = "路漫漫其修远兮"
+keywords = "博客、编码、折腾、生活、阅读、自律"
+
+[menu]
+[[menu.main]]
+name = "编码"
+url = "/posts/coding/"
+weight = "10"
+[[menu.main]]
+name = "读书"
+url = "/posts/reading/"
+weight = "20"
+[[menu.main]]
+name = "闲聊"
+url = "/posts/chat/"
+weight = "30"
+[[menu.main]]
+name = "归档"
+url = "/archives/"
+weight = "40"
+[[menu.main]]
+name = "关于我"
+url = "/about/"
+weight = "50"
+[[menu.main]]
+name = "🔍"
+url = "/search/"
+weight = "60"
+
+[outputs]
+home = ["Atom", "HTML", "JSON"] # <domain>/atom.xml
+page = ["HTML"]
+
+[outputFormats.Atom]
+mediatype = "application/rss"
+baseName = "atom"
