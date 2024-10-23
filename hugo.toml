@@ -62,3 +62,7 @@ page = ["HTML"]
 [outputFormats.Atom]
 mediatype = "application/rss"
 baseName = "atom"
+
+[params.twikoo]
+enable = false
+visitor = true
