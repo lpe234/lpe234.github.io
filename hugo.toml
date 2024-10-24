@@ -29,6 +29,8 @@ ReadMore = "阅读全文"
 description = "路漫漫其修远兮"
 keywords = "博客、编码、折腾、生活、阅读、自律"
 
+follow = "feedId:71853445839102976+userId:68891036454289408"
+
 [menu]
 [[menu.main]]
 name = "编码"
