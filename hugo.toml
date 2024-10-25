@@ -7,7 +7,8 @@ title = 'Lp+Yj->LY'
 
 #
 theme = 'hello-friend'
-summaryLength = 200
+summaryLength = 140
+hasCJKLanguage = true
 #
 pagination.pagerSize = 10
 rssLimit = 5
