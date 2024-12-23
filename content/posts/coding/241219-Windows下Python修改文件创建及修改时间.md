@@ -27,8 +27,35 @@ def change_file_time(filename: str, create_time: float, modified_time: float):
     :param modified_time: 修改时间
     :return:
     """
-    handle = win32file.CreateFile(filename, win32file.GENERIC_WRITE, 0, None, win32file.OPEN_EXISTING,win32file.FILE_ATTRIBUTE_NORMAL, None)
+    # 若为文件夹
+    if os.path.isdir(filename):
+        os.utime(filename, (create_time, modified_time))
+        return
+    handle = win32file.CreateFile(filename, win32file.GENERIC_WRITE, 0, None, win32file.OPEN_EXISTING, win32file.FILE_ATTRIBUTE_NORMAL, None)
     win32file.SetFileTime(handle, pywintypes.Time(create_time), pywintypes.Time(modified_time), pywintypes.Time(modified_time))
+```
+
+## 递归方式 获取全部文件(夹)
+
+```python
+def get_all_files(path_dir: str):
+    """
+    获取指定目录下的所有文件
+    :param path_dir:
+    :return:
+    """
+    files = []
+    for dirpath, dirnames, filenames in os.walk(path_dir):
+        for filename in filenames:
+            abs_file = os.path.join(dirpath, filename)
+            files.append(abs_file)
+        for dirname in dirnames:
+            abs_dir = os.path.join(dirpath, dirname)
+            # 添加文件夹
+            files.append(abs_dir)
+            # 递归获取文件
+            files += get_all_files(abs_dir)
+    return files
 ```
 
 ## 业务逻辑 
